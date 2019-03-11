@@ -27,7 +27,7 @@ public enum RockPaperScissorHandSign {
 //        } else {
 //            return ROCK;
 //        }
-        return null;
+        return beats;
     }
 
     public RockPaperScissorHandSign getLoser() {
@@ -39,6 +39,6 @@ public enum RockPaperScissorHandSign {
 //        } else {
 //            return PAPER;
 //        }
-        return null;
+        return beats;
     }
 }
