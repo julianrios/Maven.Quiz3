@@ -13,18 +13,45 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType findOddOccurringValue() {
-        return null;
+        return findEvenOccurringValue();
     }
 
     public SomeType findEvenOccurringValue() {
-        return null;
+        SomeType common = array[0];
+        int commonCount = getNumberOfOccurrences(array, common);
+
+        for (SomeType currentObject : array) {
+            int currentCount = getNumberOfOccurrences(array, currentObject);
+
+            if (currentCount > commonCount) {
+                common = currentObject;
+                commonCount = currentCount;
+            }
+        }
+        return common;
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
-        return null;
+        Integer count = 0;
+        for(Object number : array) {
+            if(number.equals(valueToEvaluate)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
         return null;
+    }
+
+    public Integer getNumberOfOccurrences(SomeType[] array, SomeType objectToCount) {
+        Integer count = 0;
+        for(Object number : array) {
+            if(number.equals(objectToCount)) {
+                count++;
+            }
+        }
+        return count;
     }
 }
